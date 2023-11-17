@@ -1,0 +1,76 @@
+﻿@model Product
+
+<h3>InventoryTag: @Model.InventoryTag</h3>
+<table class="table">
+    <tr>
+        <th>Moves</th>
+        <th>Custodian</th>
+        <th>Assigned</th>
+        <th>ITDistributor</th>
+        <th>Jot Form</th>
+        <th>Upload Form</th>
+
+
+    </tr>
+
+    <tr>
+        <td>@Model.MovesID</td>
+        <td>@Model.Custodian</td>
+        <td>@Model.Assigned.ToString("d")</td>
+        <td>@Model.ITDistributor</td>
+        <td>@Model.JotForm</td>
+        <td>@Model.UploadForm</td>
+    </tr>
+
+
+</table>
+
+@*<table>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var product in Model)
+        {
+            <tr>
+                <td><a href="/ITProducts/Product/@product.Moves">@product.Moves</a></td>
+                <td>@product.InventoryTag</td>
+                <td>@product.ProductName</td>
+                <td>@product.Description</td>
+                <td>@product.DateAssigned</td>
+                <td>@product.ITDistributor</td>
+                <td>@product.Custodian</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="7">No products available.</td>
+        </tr>
+    }
+</table>*@
+
+@*@model Inventory
+
+<h3>Inventory Tag Information</h3>
+<table class="table">
+    <tr>
+        <th>Moves</th>
+        <th>Custodian</th>
+        <th>Assigned</th>
+        <th>ITDistributor</th>
+        <th>Jot Form</th>
+        <th>Upload Form</th>
+    </tr>
+    <tr>
+        <td>@Model.MovesID</td>
+        <td>@Model.Custodian</td>
+        <td>@Model.Assigned.ToString("d")</td>
+        <td>@Model.ITDistributor</td>
+        <td>@Model.JotForm</td>
+        <td>@Model.UploadForm</td>
+    </tr>
+</table>*@
+
+
+
+
