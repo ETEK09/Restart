@@ -6,5 +6,6 @@ namespace Restart
     {
         public IEnumerable<ITProducts> GetALLITProducts();
         public Product GetProductByMoves(int moves);
+        public void UpdateProduct(Product prod);
     }
 }

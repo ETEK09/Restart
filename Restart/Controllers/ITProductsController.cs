@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Restart.Models;
 
 namespace Restart.Controllers
 {
@@ -24,6 +25,23 @@ namespace Restart.Controllers
             var product = repo.GetProductByMoves(id);
             return View(product);        
         
+        }
+
+        public IActionResult UpdateProduct(int id)
+        {
+            Product product = repo.GetProductByMoves(id);
+            if (product == null)
+            {
+                return View("ProductNotFound");
+            }
+            return View(product);
+        }
+
+        public IActionResult UpdateProductToDatabase(Product product)
+        {
+            repo.UpdateProduct(product);
+
+            return RedirectToAction("ViewProduct", new { id = product.MovesID });
         }
     }
 }

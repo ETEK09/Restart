@@ -1,0 +1,20 @@
+﻿@model Product
+
+<h2>Update @Model.InventoryTag</h2>
+
+@using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
+{
+    <input asp-for="MovesID" type="hidden" value="@Model.MovesID" />
+
+    <label asp-for="InventoryTag" class="control-label">InventoryTag</label>
+    <input type="number" name="InventoryTag" class="form-control" value="@Model.InventoryTag" />
+
+    <label asp-for="ITDistributor" class="control-label">ITDistributor</label>
+    <input type="text" step="0.01" name="ITDistributor" class="form-control" value="@Model.ITDistributor" />
+
+    <label asp-for= "Custodian" class="control-label">Custodian</label>
+    <input type = "text" step="0.01" name="Custodian" class="form-control" value="@Model.Custodian" />
+
+
+    <input type="submit" value="Update Product" class="btn btn-primary" />
+}

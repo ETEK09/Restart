@@ -2,7 +2,7 @@
 {
     public class ITProducts
     {
-        public int Products { get; set; }
+        public int ProductID { get; set; }
         public string InventoryTag { get; set; }
         public string ProductName { get; set; }
 
@@ -14,6 +14,6 @@
 
         public string Custodian { get; set; }
 
-
+        public string UploadForm { get; set; }
     }
 }

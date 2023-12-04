@@ -41,11 +41,13 @@ namespace Restart
 
         public IEnumerable<ITProducts> GetALLITProducts()
         {
-            return _conn.Query<ITProducts>("SELECT * FROM ITProducts");
+            //return _conn.Query<ITProducts>("SELECT * FROM PRODUCT p INNER JOIN itproducts itp ON p.InventoryTag = itp.InventoryTag");
+
+            return _conn.Query<ITProducts>("SELECT * FROM itproducts");
         }
 
-       
-        public void InsertITProduct(ITProducts model)
+
+        public void InsertITProducts(ITProducts model)
         {
             string query = "INSERT INTO ITProducts (ProductName, DateAssigned) VALUES (@ProductName, @DateAssigned)";
 
@@ -61,10 +63,16 @@ namespace Restart
 
         public Product GetProductByMoves(int id)
         {
+            //return _conn.QuerySingle<Product>("SELECT * FROM PRODUCT p INNER JOIN itproducts itp ON p.InventoryTag = itp.InventoryTag WHERE MovesID = @id", new { id = id });
+
             return _conn.QuerySingle<Product>("SELECT * FROM PRODUCT WHERE MovesID = @id", new { id = id });
         }
 
-
+        public void UpdateProduct(Product product)
+        {
+            _conn.Execute("UPDATE product SET InventoryTag = @InventoryTag, ITDistributor = @ITDistributor, Custodian = @Custodian WHERE MovesID = @id",
+     new { inventorytag = product.InventoryTag, itdistributor = product.ITDistributor, custodian = product.Custodian, id = product.MovesID });
+        }
     }
 }
 

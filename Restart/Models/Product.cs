@@ -17,5 +17,6 @@ namespace Restart.Models
 
         public string UploadForm { get; set; }
 
+        public int Products { get; set; }
     }
 }

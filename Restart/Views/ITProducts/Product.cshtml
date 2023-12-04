@@ -1,6 +1,7 @@
 ﻿@model Product
 
-<h3>InventoryTag: @Model.InventoryTag</h3>
+<h3>@Model.InventoryTag</h3>
+
 <table class="table">
     <tr>
         <th>Moves</th>
@@ -9,10 +10,7 @@
         <th>ITDistributor</th>
         <th>Jot Form</th>
         <th>Upload Form</th>
-
-
     </tr>
-
     <tr>
         <td>@Model.MovesID</td>
         <td>@Model.Custodian</td>
@@ -21,9 +19,45 @@
         <td>@Model.JotForm</td>
         <td>@Model.UploadForm</td>
     </tr>
-
-
 </table>
+
+<div style="display: block">
+    <a href="/ITProducts/UpdateProduct/@Model.MovesID">Update this Product</a>
+</div>
+
+
+@*
+@if (Model != null)
+{
+    <h3>InventoryTag: @Model.InventoryTag</h3>
+    <table class="table">
+        <tr>
+            <th>Moves</th>
+            <th>InventoryTag</th>
+            <th>Custodian</th>
+            <th>Assigned</th>
+            <th>ITDistributor</th>
+            <th>Jot Form</th>
+            <th>Upload Form</th>
+        </tr>
+
+        <tr>
+            <td>@Model.MovesID</td>
+            <td>@Model.InventoryTag</td>
+            <td>@Model.Custodian</td>
+            <td>@Model.Assigned.ToString("d")</td>
+            <td>@Model.ITDistributor</td>
+            <td>@Model.JotForm</td>
+            <td>@Model.UploadForm</td>
+        </tr>
+    </table>
+}
+else
+{
+    <p>No inventory moves available.</p>
+}
+*@
+
 
 @*<table>
     @if (Model != null && Model.Any())
@@ -49,8 +83,8 @@
     }
 </table>*@
 
-@*@model Inventory
 
+@*
 <h3>Inventory Tag Information</h3>
 <table class="table">
     <tr>

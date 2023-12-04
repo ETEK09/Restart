@@ -68,18 +68,20 @@
             <th>Date Assigned</th>
             <th>ITDistributor</th>
             <th>Custodian</th>
+            @*<th>UploadForm</th>*@
         </tr>
 
         @foreach (var product in Model)
         {
             <tr>
-                <td>@product.Products</td>
-                <td><a href="/ITProducts/Product/@product.Products">@product.InventoryTag</a></td>
+                <td>@product.ProductID</td>
+                <td><a href="/ITProducts/Product/@product.ProductID">@product.InventoryTag</a></td>
                 <td>@product.ProductName</td>
                 <td>@product.Description</td>
                 <td>@product.DateAssigned.ToString("d")</td>
                 <td>@product.ITDistributor</td>
                 <td>@product.Custodian</td>
+                @*<td>@product.UploadForm</td>*@
             </tr>
         }
     </table>
