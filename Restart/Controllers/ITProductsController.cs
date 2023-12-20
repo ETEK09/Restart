@@ -41,7 +41,7 @@ namespace Restart.Controllers
         {
             repo.UpdateProduct(product);
 
-            return RedirectToAction("ViewProduct", new { id = product.MovesID });
+            return RedirectToAction("Product", new { id = product.MovesID });
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class Distributor
     {
-        public int Actions { get; set; }
+        public int ActionsID { get; set; }
         public int InventoryTag { get; set; }
 
         public string ProductName { get; set; }

@@ -1,8 +1,8 @@
 ﻿namespace Restart.Models
 {
-    public class ITDistributors
+    public class DistributorsIT
     {
-        public int Distributors { get; set; }
+        public int DistributorID { get; set; }
         public string Name { get; set; }
         public DateOnly Created { get; set; }
 

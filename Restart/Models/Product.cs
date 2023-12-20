@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace Restart.Models
+﻿namespace Restart.Models
 {
     public class Product
     {
@@ -9,9 +7,10 @@ namespace Restart.Models
         public string InventoryTag { get; set; }
         public string Custodian { get; set; }
 
-        public DateTime Assigned { get; set; } 
+        public DateTime Assigned { get; set; }
 
-        public string ITDistributor { get; set; }
+        public IEnumerable<DistributorsIT> Distributor { get; set; }
+        //public string distributor { get; set; }
 
         public string JotForm { get; set; }
 
