@@ -11,9 +11,5 @@ namespace Restart
         public void InsertProduct(Product productToInsert);
 
         public IEnumerable<DistributorsIT> GetDistributor();
-
-        public Product AssignDistributor();
-
-
     }
 }

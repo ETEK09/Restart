@@ -74,13 +74,11 @@ namespace Restart
 
         public void InsertProduct(Product productToInsert)
         {
-            _conn.Execute("INSERT INTO products (INVENTORYTAG, DISTRIBUTOR, CUSTODIAN) VALUES (@inventorytag, @distributor, @custodian);",
+            _conn.Execute("INSERT INTO products (INVENTORYTAG, Distributor, CUSTODIAN) VALUES (@inventorytag, @distributorid, @custodian);",
                 new { inventorytag = productToInsert.InventoryTag, distributor = productToInsert.Distributor, custodian = productToInsert.Custodian });
         }
 
-       
-       
-
+        
         public IEnumerable<DistributorsIT> GetDistributor()
         {
             return _conn.Query<DistributorsIT>("SELECT * FROM Distributorsit;");
@@ -93,6 +91,8 @@ namespace Restart
             product.Distributor = distributorList;
             return product;
         }
+
+
     }
 }
 

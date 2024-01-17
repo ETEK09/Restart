@@ -10,8 +10,12 @@
     <input type="number" name="InventoryTag" class="form-control" value="@Model.InventoryTag" />
 
     <label asp-for="Distributor" class="control-label">Distributor</label>
-    <input type="text" step="0.01" name="ITDistributor" class="form-control" value="@Model.Distributor" />
-
+    <select name="Distributor" value="@Model.Distributor">
+        @foreach(var distributor in ViewBag.Distributors)
+        {
+            <option value="@distributor.Name">@distributor.Name</option>
+        }
+    </select>
     <label asp-for= "Custodian" class="control-label">Custodian</label>
     <input type = "text" step="0.01" name="Custodian" class="form-control" value="@Model.Custodian" />
 

@@ -9,8 +9,8 @@
 
         public DateTime Assigned { get; set; }
 
-        public IEnumerable<DistributorsIT> Distributor { get; set; }
-        //public string distributor { get; set; }
+        public int DistributorId { get; set; }
+        public string Distributor { get; set; }
 
         public string JotForm { get; set; }
 

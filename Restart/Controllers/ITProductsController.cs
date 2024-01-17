@@ -29,6 +29,8 @@ namespace Restart.Controllers
 
         public IActionResult UpdateProduct(int id)
         {
+            ViewBag.Distributors = repo.GetDistributor();
+            
             Product product = repo.GetProductByMoves(id);
             if (product == null)
             {
@@ -42,6 +44,14 @@ namespace Restart.Controllers
             repo.UpdateProduct(product);
 
             return RedirectToAction("Product", new { id = product.MovesID });
+        }
+
+
+
+        public IActionResult InsertProduct()
+        {
+            var prod = repo.AssignCategory();
+            return View(prod);
         }
     }
 }
